@@ -1,77 +1,48 @@
-import React from 'react';
-import { Box, Container, Grid } from 'theme-ui';
-import BlockTitle from 'components/block-title';
-import ServiceCard from 'components/cards/service-card';
-import serviceImage1 from 'assets/service-1.png';
-import serviceImage2 from 'assets/service-2.png';
-import serviceImage3 from 'assets/service-3.png';
-import serviceImage4 from 'assets/service-4.png';
-import serviceImage5 from 'assets/service-5.png';
-import serviceImage6 from 'assets/service-6.png';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx, Box, Container } from 'theme-ui';
+import { rgba } from 'polished';
+import SectionHeading from 'components/section-heading';
+import Service from 'components/cards/service';
+import icon1 from 'assets/images/icons/service1.png';
+import icon2 from 'assets/images/icons/service2.png';
+import icon3 from 'assets/images/icons/service3.png';
 
-const SERVICES_DATA = [
+const data = [
   {
-    image: serviceImage1,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: '3D modeling & art',
-    path: '#',
+    id: 1,
+    icon: icon1,
+    title: 'Marketing & advertising',
+    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
   },
   {
-    image: serviceImage2,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Digital promotion',
-    path: '#',
+    id: 3,
+    icon: icon2,
+    title: 'Ultimate development',
+    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
   },
   {
-    image: serviceImage3,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Business Enterprise',
-    path: '#',
-  },
-  {
-    image: serviceImage4,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Marketing & advertising',
-    path: '#',
-  },
-  {
-    image: serviceImage5,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Ultimate development',
-    path: '#',
-  },
-  {
-    image: serviceImage6,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Online support',
-    path: '#',
+    id: 4,
+    icon: icon3,
+    title: 'Business Enterprise',
+    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
   },
 ];
+
 const Services = () => {
   return (
-    <Box as="section" id="services" sx={styles.services}>
+    <Box as="section" id="services" sx={styles.section}>
       <Container>
-        <BlockTitle
-          title="What the features of product"
-          text="Features are highlighted here"
+        <SectionHeading
+          sx={styles.heading}
+          title="Grow your startup with our Service"
+          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents."
         />
-        <Grid sx={styles.grid}>
-          {SERVICES_DATA.map(({ image, text, heading, path }, index) => (
-            <ServiceCard
-              image={image}
-              text={text}
-              heading={heading}
-              path={path}
-              key={index}
-            />
+        <Box sx={styles.contentWrapper}>
+          {data?.map((item) => (
+            <Service key={item.id} item={item} />
           ))}
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );
@@ -80,11 +51,24 @@ const Services = () => {
 export default Services;
 
 const styles = {
-  services: {
-    pt: ['80px', null, null, null, '80px', null, '100px'],
+  section: {
+    backgroundColor: rgba('#FFF5ED', 0.5),
+    pt: [11, 11, 11, 12, 12, 12, 14],
+    pb: [7, 7, 7, 9, 9, 10, 11],
   },
-  grid: {
-    gridGap: '30px',
-    gridTemplateColumns: ['1fr', null, null, '1fr 1fr', null, '1fr 1fr 1fr'],
+  heading: {
+    maxWidth: [null, null, null, 455, 660],
+    mb: [6, null, null, 8, null, 9, 13],
+  },
+  contentWrapper: {
+    gap: 30,
+    display: 'grid',
+    justifyContent: ['center', null, null, 'unset'],
+    gridTemplateColumns: [
+      'repeat(1, 285px)',
+      'repeat(1, 325px)',
+      'repeat(1, 285px)',
+      'repeat(3, 1fr)',
+    ],
   },
 };

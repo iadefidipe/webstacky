@@ -1,123 +1,134 @@
-export default [
+import facebook from 'assets/images/icons/facebook.png';
+import twitter from 'assets/images/icons/twitter.png';
+import github from 'assets/images/icons/github.png';
+import dribbble from 'assets/images/icons/dribbble.png';
+
+export const menuItems = [
   {
-    header: 'Company',
+    id: 2,
+    title: 'About Us',
     items: [
       {
-        path: '/',
-        label: 'About',
-      },
-      {
-        path: '/',
-        label: 'Affiliate',
-      },
-      {
-        path: '/',
-        label: 'Careers & Culture    ',
-      },
-      {
-        path: '/',
-        label: 'Blog',
-      },
-      {
-        path: '/',
-        label: 'Press',
-      },
-    ],
-  },
-  {
-    header: 'About Us',
-    items: [
-      {
-        path: '/',
+        path: '#!',
         label: 'Support Center',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Customer Support',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'About Us',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Copyright',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Popular Campaign',
       },
     ],
   },
   {
-    header: 'Our Information',
+    id: 3,
+    title: 'Our Information',
     items: [
       {
-        path: '/',
+        path: '#!',
         label: 'Return Policy ',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Privacy Policy',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Terms & Conditions',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Site Map',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Store Hours',
       },
     ],
   },
   {
-    header: 'My Account',
+    id: 4,
+    title: 'My Account',
     items: [
       {
-        path: '/',
+        path: '#!',
         label: 'Press inquiries',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Social media ',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'directories',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Images & B-roll',
       },
       {
-        path: '/',
+        path: '#!',
         label: 'Permissions',
       },
     ],
   },
   {
-    header: 'Policy',
+    id: 5,
+    title: 'Connect',
     items: [
       {
-        path: '/',
-        label: 'Application security',
+        path: '#!',
+        icon: facebook,
+        label: 'Facebook',
       },
       {
-        path: '/',
-        label: 'Software principles',
+        path: '#!',
+        icon: twitter,
+        label: 'Twitter',
       },
       {
-        path: '/',
-        label: 'Unwanted software policy',
+        path: '#!',
+        icon: github,
+        label: 'Github',
       },
       {
-        path: '/',
-        label: 'Responsible supply chain',
+        path: '#!',
+        icon: dribbble,
+        label: 'Dribbble',
       },
     ],
+  },
+];
+
+export const footerNav = [
+  {
+    path: '#!',
+    label: 'Home',
+  },
+  {
+    path: '#!',
+    label: 'Advertise',
+  },
+  {
+    path: '#!',
+    label: 'Supports',
+  },
+  {
+    path: '#!',
+    label: 'Marketing',
+  },
+  {
+    path: '#!',
+    label: 'FAQ',
   },
 ];

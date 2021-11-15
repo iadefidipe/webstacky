@@ -1,113 +1,122 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui';
-import { Link } from 'components/link';
-import { Link as ScrollLink } from 'react-scroll';
+import { jsx, Box, Container, Button } from 'theme-ui';
+import Sticky from 'react-stickynode';
 import Logo from 'components/logo';
-import { DrawerProvider } from 'contexts/drawer/drawer.provider';
-import MobileDrawer from './mobileDrawer';
+import { NavLink } from 'components/link';
+import { DrawerProvider } from 'contexts/drawer/drawer-provider';
+import NavbarDrawer from './navbar-drawer';
 import menuItems from './header.data';
-import logoDark from 'assets/logo-dark.svg';
 
-export default function Header({ className }) {
+export default function Header() {
   return (
     <DrawerProvider>
-      <header sx={styles.header} className={className}>
-        <Container sx={styles.container}>
-          <Logo image={logoDark} />
-
-          <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
-              <ScrollLink
-                activeClass="active"
-                sx={styles.nav.navLink}
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </ScrollLink>
-            ))}
-          </Flex>
-
-          <Link
-            path="/"
-            ml={2}
-            label="Purchase Now"
-            sx={styles.headerBtn}
-            variant="buttons.primary"
-          />
-
-          <MobileDrawer />
-        </Container>
-      </header>
+      <Box sx={styles.headerWrapper}>
+        <Sticky enabled={true} top={0} activeClass="is-sticky" innerZ={100}>
+          <Box as="header" sx={styles.header}>
+            <Container>
+              <Box sx={styles.headerInner}>
+                <Logo sx={styles.logo} />
+                <Box as="nav" sx={styles.navbar} className="navbar">
+                  <Box as="ul" sx={styles.navList}>
+                    {menuItems.map(({ path, label }, i) => (
+                      <li key={i}>
+                        <NavLink path={path} label={label} />
+                      </li>
+                    ))}
+                  </Box>
+                  <Button variant="text" sx={styles.getStartedDesktop}>
+                    Get Started
+                  </Button>
+                </Box>
+                <Button variant="text" sx={styles.getStartedMobile}>
+                  Get Started
+                </Button>
+                <NavbarDrawer />
+              </Box>
+            </Container>
+          </Box>
+        </Sticky>
+      </Box>
     </DrawerProvider>
   );
 }
 
 const styles = {
-  headerBtn: {
-    backgroundColor: 'black',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    letterSpacing: '-0.16px',
-    borderRadius: '5px',
-    color: '#ffffff',
-    padding: '6.5px 24px',
-    display: ['none', null, null, null, 'inline-block'],
-    ml: ['0', null, null, 'auto', '0'],
-    mr: ['0', null, null, '20px', '0'],
-    '&:hover': {
-      color: '#fff',
+  headerWrapper: {
+    backgroundColor: 'transparent',
+    '.is-sticky': {
+      header: {
+        backgroundColor: 'white',
+        boxShadow: '0 6px 13px rgba(38,78,118,0.1)',
+        paddingTop: '15px',
+        paddingBottom: '15px',
+      },
     },
   },
   header: {
-    color: 'text_white',
-    fontWeight: 'normal',
-    py: '25px',
-    width: '100%',
     position: 'fixed',
-    top: 0,
     left: 0,
-    backgroundColor: 'transparent',
-    transition: 'all 0.4s ease',
-
-    '&.sticky': {
-      backgroundColor: 'background',
-      color: 'text',
-      py: '15px',
-      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
+    right: 0,
+    py: 4,
+    transition: 'all 0.3s ease-in-out 0s',
+    '&.is-mobile-menu': {
+      backgroundColor: 'white',
     },
   },
-  container: {
+  headerInner: {
     display: 'flex',
     alignItems: 'center',
-    width: [null, null, null, null, null, null, '1390px'],
-    '@media screen and (max-width: 960px)': {
-      justifyContent: 'space-between',
+    justifyContent: 'space-between',
+  },
+  logo: {
+    mr: [null, null, null, null, 6, 12],
+  },
+  navbar: {
+    display: ['none', null, null, null, 'flex'],
+    alignItems: 'center',
+    flexGrow: 1,
+    // justifyContent: 'center',
+  },
+  navList: {
+    display: ['flex'],
+    listStyle: 'none',
+    // marginLeft: 'auto',
+    flexGrow: 1,
+    p: 0,
+    'li:last-child': {
+      ml: ['auto'],
+    },
+    '.nav-item': {
+      cursor: 'pointer',
+      fontWeight: 400,
+      padding: 0,
+      margin: [0, 0, 0, 0, '0 20px'],
+    },
+    '.active': {
+      color: 'primary',
     },
   },
-  nav: {
-    mx: 'auto',
-    '@media screen and (max-width: 960px)': {
-      display: 'none',
-    },
-    navLink: {
-      fontSize: '16px',
-      color: '#02073E',
-      fontWeight: '400',
-      cursor: 'pointer',
-      lineHeight: '1.2',
-      mr: '48px',
-      transition: '500ms',
-      ':last-child': {
-        mr: '0',
-      },
-      '&:hover, &.active': {
-        color: 'primary',
-      },
+  getStartedDesktop: {
+    color: 'primary',
+    display: ['none', 'none', 'none', 'none', 'flex'],
+  },
+  getStartedMobile: {
+    color: 'primary',
+    fontSize: [1],
+    minHeight: 30,
+    m: ['0 15px 0 auto'],
+    padding: '0 11px',
+    display: ['flex', null, null, null, 'none'],
+  },
+  closeButton: {
+    height: '32px',
+    padding: '4px',
+    minHeight: 'auto',
+    width: '32px',
+    ml: '3px',
+    path: {
+      stroke: 'text',
     },
   },
 };

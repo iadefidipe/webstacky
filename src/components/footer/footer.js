@@ -1,39 +1,33 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import React from 'react';
 import { jsx, Box, Text, Container } from 'theme-ui';
-import { Link } from 'components/link';
 import Logo from 'components/logo';
-import logoLight from 'assets/logo-light.svg';
+import { Link } from 'components/link';
+import Widget from './widget';
+import { menuItems } from './footer.data';
+import { rgba } from 'polished';
+
 export default function Footer() {
   return (
     <Box as="footer" sx={styles.footer}>
-      <Container sx={styles.container}>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: ['column', null, null, null, null, 'row'],
-          }}
-        >
-          <Logo image={logoLight} />
-          <Text
-            as="p"
-            sx={{
-              color: '#ffffff',
-              opacity: '0.7',
-              fontSize: '14px',
-              mt: ['10px', null, null, null, null, '0'],
-            }}
-          >
-            Copyright by {new Date().getFullYear()} RedQ, Inc
-          </Text>
-        </Box>
-        <Box sx={styles.linksWrap}>
-          <Link path="/">Home</Link>
-          <Link path="/">Advertise</Link>
-          <Link path="/">Supports</Link>
-          <Link path="/">Marketing</Link>
-          <Link path="/">FAQ</Link>
+      <Container>
+        <Box sx={styles.footerTopInner}>
+          <Box sx={styles.about}>
+            <Box sx={styles.logo}>
+              <Logo />
+            </Box>
+            <Box sx={styles.terms}>
+              <Link path="#!">Terms of use</Link>
+              <Text as="span">|</Text>
+              <Link path="#!">Privacy</Link>
+            </Box>
+            <Text as="p" sx={styles.copyright}>
+              Copyright by {new Date().getFullYear()} RedQ, Inc
+            </Text>
+          </Box>
+          {menuItems.map(({ id, title, items }) => (
+            <Widget key={id} title={title} items={items} />
+          ))}
         </Box>
       </Container>
     </Box>
@@ -42,38 +36,67 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    py: ['40px', null, null, null, null, '30px', '40px'],
-    backgroundColor: '#020718',
-    position: 'relative',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: '#ffffff',
-      opacity: '0.05',
-    },
+    pt: [8],
+    pb: [8],
   },
-  container: {
-    display: 'flex',
-    flexDirection: ['column', null, null, null, null, 'row'],
-    justifyContent: ['center', null, null, null, null, 'space-between'],
+  footerTopInner: {
+    gap: [30, null, 50, '20px 50px', 17, 50],
+    display: ['grid'],
+    gridTemplateColumns: [
+      'repeat(2, 1fr)',
+      null,
+      null,
+      'repeat(4, 1fr)',
+      'repeat(5, 1fr)',
+    ],
+  },
+  footerInner: {
+    borderTop: `1px solid #D9E0E7`,
+    display: ['block', null, 'flex'],
     alignItems: 'center',
-    position: 'relative',
-    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    padding: '35px 0 40px',
   },
-  linksWrap: {
-    mt: ['15px', null, null, null, null, '0'],
-    display: 'flex',
-    flexWrap: 'wrap',
+  about: {
+    display: [null, null, null, 'grid', 'block'],
+    gridTemplateColumns: '205px 1fr 1fr',
+    alignItems: ['center'],
+    gridRow: ['3/4', null, '1/1', '3/4', 'unset'],
+    gridColumn: ['1/3', null, '1/2', '1/5', 'unset'],
+  },
+  logo: {
+    display: ['flex'],
+    justifyContent: ['center', null, null, 'unset'],
+    gridColumn: '1/2',
+  },
+  terms: {
+    display: ['flex'],
+    gridColumn: '3/4',
+    alignItems: ['center', null, null, null, 'flex-start', 'center'],
+    flexDirection: ['row', null, null, null, 'column', 'row'],
+    justifyContent: [
+      'center',
+      null,
+      'flex-start',
+      'center',
+      null,
+      'flex-start',
+    ],
+    mt: [4, null, null, 0, 4],
     a: {
-      fontSize: ['14px', null, null, null, '16px'],
-      color: '#ffffff',
-      transition: 'all 500ms ease',
-      '&:hover': { opacity: 0.7 },
+      color: 'heading',
     },
-    'a+a': { ml: ['15px', null, null, null, '35px'] },
+    span: {
+      display: ['inline-flex', null, null, null, 'none', 'inline-flex'],
+      m: ['0 10px'],
+    },
+  },
+  copyright: {
+    color: rgba('#0F2137', 0.6),
+    fontSize: ['14px'],
+    mt: [3, null, null, -31, 3],
+    mr: [null, null, null, 'auto', 'unset'],
+    gridColumn: '2/3',
+    textAlign: ['center', null, 'left', 'center', 'left'],
   },
 };
