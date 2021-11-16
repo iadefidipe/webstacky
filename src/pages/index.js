@@ -5,11 +5,11 @@ import Layout from 'components/layout';
 import Banner from 'sections/banner';
 import Services from 'sections/services';
 import Testimonials from 'sections/testimonials';
-import OurTeam from 'sections/our-team';
+// import OurTeam from 'sections/our-team';
 import OtherServices from 'sections/other-services';
 import WhyUs from 'sections/why-us';
 import SubscribeUs from 'sections/subscribe-us';
-import Blog from 'sections/blog';
+// import Blog from 'sections/blog';
 
 export default function IndexPage() {
   return (
@@ -22,10 +22,10 @@ export default function IndexPage() {
         <Banner />
         <Services />
         <Testimonials />
-        <OurTeam />
+        {/* <OurTeam /> */}
         <OtherServices />
         <WhyUs />
-        <Blog />
+        {/* <Blog /> */}
         <SubscribeUs />
       </Layout>
     </ThemeProvider>
