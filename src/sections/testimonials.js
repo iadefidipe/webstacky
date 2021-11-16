@@ -15,31 +15,32 @@ const data = [
     id: 1,
     logo: uber,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“Whatever we create in Qwilr looks absolutely brilliant. It helps show our work in the best light, and is downright impressive when clients see a Qwilr Page we have made for them.”`,
+    quote: `“The project we outsourced, were executed to specification and also delivered on time. I must say the team at Webstacky understands the assignment so well GM.”`,
   },
   {
     id: 2,
     logo: google,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“Qwilr Page we have made for them. Whatever we create in Qwilr looks absolutely brilliant. It helps show our work in the best light, and is downright impressive when clients see a”`,
+    quote: `“We've been trying to put together a functional website. I am happy to say we finally hired the team at Webstacky, and they've worked closely with us throughout the process, staying on task, on target, and on budget. I also appreciate their quick and courteous responses. I highly recommend their service”`,
   },
   {
     id: 3,
     logo: paypal,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“Whatever we create in Qwilr looks absolutely brilliant. It helps show our work in the best light, and is downright impressive when clients see a Qwilr Page we have made for them.”`,
+    quote: `“We thank Webstacky for the wonderful job in helping us develop our program. Everyone was professional, excellent and hard working. Thanks to them, we were able to achieve our goal on time, and we look forward to continue working with them in the future.”`,
   },
   {
     id: 4,
     logo: microsoft,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“Qwilr Page we have made for them. Whatever we create in Qwilr looks absolutely brilliant. It helps show our work in the best light, and is downright impressive when clients see a”`,
+    quote: `“I wanted to take a moment to thank you for the services your team has provided. Your team has been a pleasure to work with, professional and timely. The only delay in work that we have experienced has been due to our own lack of organization managing our projects, not yours. Job well done and I hope we can continue to grow togethe”`,
   },
   {
     id: 5,
     logo: dribbble,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“Whatever we create in Qwilr looks absolutely brilliant. It helps show our work in the best light, and is downright impressive when clients see a Qwilr Page we have made for them.”`,
+    quote: `“We are very happy with Webstacky; very serious and consistent in their work. The team of Developers have always been there for us all the time. This is a company I can recommend to anyone
+    to perform any work.”`,
   },
 ];
 
