@@ -33,7 +33,7 @@ const data = [
     id: 4,
     logo: microsoft,
     author: 'By Denny Albuz, Adviser of Paypal',
-    quote: `“I wanted to take a moment to thank you for the services your team has provided. Your team has been a pleasure to work with, professional and timely. The only delay in work that we have experienced has been due to our own lack of organization managing our projects, not yours. Job well done and I hope we can continue to grow togethe”`,
+    quote: `“I wanted to take a moment to thank you for the services your team has provided. Your team has been a pleasure to work with, professional and timely. The only delay in work that we have experienced has been due to our own lack of organization managing our projects, not yours. Job well done and I hope we can continue to grow together”`,
   },
   {
     id: 5,
