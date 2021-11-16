@@ -9,7 +9,7 @@ import Testimonials from 'sections/testimonials';
 import OtherServices from 'sections/other-services';
 import WhyUs from 'sections/why-us';
 import SubscribeUs from 'sections/subscribe-us';
-import Blog from 'sections/blog';
+// import Blog from 'sections/blog';
 
 export default function IndexPage() {
   return (
