@@ -12,20 +12,20 @@ const data = [
   {
     id: 1,
     icon: icon1,
-    title: 'Marketing & advertising',
-    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
+    title: 'Research & Planning',
+    description: `We ensure your dapp is viable by conducting an in-depth market evaluation.`,
   },
   {
     id: 3,
     icon: icon2,
-    title: 'Ultimate development',
-    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
+    title: 'Building & Scaling',
+    description: `Dapps are developed with the best web3 technologies & practices that scales.`,
   },
   {
     id: 4,
     icon: icon3,
-    title: 'Business Enterprise',
-    description: `Get your info tests delivered at home collect a sample from the your progress tests.`,
+    title: 'Maintenance & Upgrading',
+    description: `Team of developers ready to improve an existing dapp and push an even better version.`,
   },
 ];
 
@@ -35,8 +35,8 @@ const Services = () => {
       <Container>
         <SectionHeading
           sx={styles.heading}
-          title="Grow your startup with our Service"
-          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents."
+          title="Build your next big Dapp"
+          description="Our team of brilliant designers, developers and project managers are ready to bring your dapp ideas to life."
         />
         <Box sx={styles.contentWrapper}>
           {data?.map((item) => (

@@ -8,19 +8,15 @@ export default [
     label: 'Services',
   },
   {
-    path: 'team',
-    label: 'Team',
-  },
-  {
     path: 'why-us',
     label: 'Why Us',
   },
   {
-    path: 'blog',
-    label: 'Blog',
+    path: 'services',
+    label: 'Offers',
   },
   {
-    path: 'login',
-    label: 'Login',
+    path: 'careers',
+    label: 'Careers',
   },
 ];

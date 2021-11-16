@@ -16,8 +16,8 @@ export default function IndexPage() {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title="Startup agency landing template"
-          description="Collection of free top of the line startup landing templates built using react/ next js. Free to download, simply edit and deploy! Updated weekly!"
+          title="Webstacky | Web3 Development Agency"
+          description="Webstacky focuses on building functional and scalable web3 applications using the latest web3 technologies."
         />
         <Banner />
         <Services />
